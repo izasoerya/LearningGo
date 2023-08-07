@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/izasoerya/Prakerja-Go/controller"
 )
 
 func main() {
-	fmt.Println("Welcome to Prakerja!");
+	fmt.Print("The Value is : ")
+	fmt.Println(controller.Calculate(12, 15))
 }
-
-
