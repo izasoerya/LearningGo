@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Welcome to Prakerja");
+	fmt.Println("Welcome to Prakerja!");
 }
 
 
