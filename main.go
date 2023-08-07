@@ -9,5 +9,4 @@ import (
 func main() {
 	fmt.Print("The Value is : ")
 	fmt.Println(controller.Calculate(12, 15))
-	fmt.Println("Conflict B")
 }
