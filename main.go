@@ -3,11 +3,12 @@ package main
 import (
 	"fmt"
 
-	"github.com/izasoerya/Prakerja-Go/controller"
+	soalprakerja "github.com/izasoerya/Prakerja-Go/soal_prakerja"
 )
 
 func main() {
 	fmt.Print("The Value is : ")
-	fmt.Println(controller.Calculate(12, 15))
-	fmt.Println("Conflict from A")
+	fmt.Println(soalprakerja.DetectPrimeNumber(0))
+	fmt.Println(soalprakerja.Detect7Multiplication(42))
+	fmt.Println(soalprakerja.CalculateAreaTrapeziod(2,4,3))
 }
