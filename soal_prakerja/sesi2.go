@@ -4,10 +4,10 @@ func DetectPrimeNumber(input int) string {
 	yes := "Prime number"
 	no := "Not prime number"
 
-	if input == 0 || input == 1 {
+	if input == 0 || input == 1 {		// 0  and 1 exception
 		return no
 	}
-	for i := 2; i < input; i++ {
+	for i := 2; i < input; i++ {		// If divided by other than itself, reutrn false
 		if input%i == 0 {
 			return no
 		}
