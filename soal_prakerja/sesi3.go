@@ -1,21 +1,19 @@
 package soalprakerja
 
 func ArrayMerge(arrayA, arrayB []string) []string {
-	/*
-		Works by read element side by side, then
-		delete the j (behind) element from the array
-	*/
-	final := append(arrayA, arrayB...)
-	var temp int
+	final := make([]string, 0, len(arrayA)+len(arrayB))
+	seen := make(map[string]bool)
 
-	for i := 0; i < len(final); i++ { // Counter for A
-		for j := i + 1; j < len(final)-1; j++ { // Counter for B
-			if final[i] == final[j] {
-				temp = j // Detect element that hold same value
-				if temp != 0 {
-					final = append(final[:temp], final[temp+1:]...) // Remove element that hold same value
-				}
-			}
+	for _, name := range arrayA {
+		if !seen[name] {
+			final = append(final, name)
+			seen[name] = true
+		}
+	}
+	for _, name := range arrayB {
+		if !seen[name] {
+			final = append(final, name)
+			seen[name] = true
 		}
 	}
 
