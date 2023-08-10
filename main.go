@@ -30,4 +30,9 @@ func main() {
 		[]string{}))
 	fmt.Println(soalprakerja.Mapping(
 		[]string{"asd", "pdm", "asd", "pln", "pdm", "pki", "pdm"}))
+	fmt.Println(soalprakerja.MunculSekali("1234123"))
+	fmt.Println(soalprakerja.MunculSekali("76523752"))
+	fmt.Println(soalprakerja.MunculSekali("12345"))
+	fmt.Println(soalprakerja.MunculSekali("1122334455"))
+	fmt.Println(soalprakerja.MunculSekali("0872504"))
 }
