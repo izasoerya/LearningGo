@@ -65,3 +65,16 @@ func Telu(c echo.Context) error {
 	}
 	return c.JSON(http.StatusOK, responseData)
 }
+
+func Papat(c echo.Context) error {
+	url := "https://jsonplaceholder.typicode.com/posts/1"
+	_, err := http.NewRequest("DELETE", url, nil)
+	if err != nil {
+		fmt.Println("Error creating request:", err)
+		return err
+	}
+
+	return c.String(http.StatusOK, "Deleted successfully")
+}
+
+
