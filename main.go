@@ -1,51 +1,22 @@
 package main
 
 import (
-	"fmt"
+	"net/http"
 
-	soalprakerja "github.com/izasoerya/Prakerja-Go/soal_prakerja"
+	// soalprakerja "github.com/izasoerya/Prakerja-Go/soal_prakerja"
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 )
 
 func main() {
-	//* Sesi 2
-	// fmt.Println(soalprakerja.DetectPrimeNumber(0))
-	// fmt.Println(soalprakerja.Detect7Multiplication(42))
-	// fmt.Println(soalprakerja.CalculateAreaTrapeziod(2, 4, 3))
+	e := echo.New()
+	e.Use(middleware.Logger())
+	e.Use(middleware.Recover())
 
-	//* Sesi 3
-	fmt.Println(soalprakerja.ArrayMerge(
-		[]string{"king", "devil", "akuma"},
-		[]string{"eddie", "steve", "geese"}))
-	fmt.Println(soalprakerja.ArrayMerge(
-		[]string{"sergei", "jin"},
-		[]string{"jin", "steve", "brayn"}))
-	fmt.Println(soalprakerja.ArrayMerge(
-		[]string{"alisha", "yoshi"},
-		[]string{"jin", "yoshi", "alisha", "law"}))
-	fmt.Println(soalprakerja.ArrayMerge(
-		[]string{},
-		[]string{"jin", "sergei"}))
-	fmt.Println(soalprakerja.ArrayMerge(
-		[]string{"hworang"},
-		[]string{}))
-	fmt.Println(soalprakerja.Mapping(
-		[]string{"asd", "pdm", "asd", "pln", "pdm", "pki", "pdm"}))
-	fmt.Println(soalprakerja.MunculSekali("1234123"))
-	fmt.Println(soalprakerja.MunculSekali("76523752"))
-	fmt.Println(soalprakerja.MunculSekali("12345"))
-	fmt.Println(soalprakerja.MunculSekali("1122334455"))
-	fmt.Println(soalprakerja.MunculSekali("0872504"))
+	e.GET("/", hello)
+	e.Logger.Fatal(e.Start(":2000"))
+}
 
-	//* Sesi 4
-	x, y := soalprakerja.EstimatedDistance(20.5, "Sedan")
-	fmt.Println("Estimated :", x, "meters. Type car :", y)
-	students := soalprakerja.Students{
-		{Name: "Alice", Score: 85},
-		{Name: "Bob", Score: 72},
-		{Name: "Charlie", Score: 93},
-		{Name: "David", Score: 68},
-		{Name: "Eve", Score: 77},
-	}
-
-	students.PrintStatistics()
+func hello(c echo.Context) error {
+	return c.String(http.StatusOK, "Hello world!")
 }
