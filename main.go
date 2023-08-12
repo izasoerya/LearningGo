@@ -35,4 +35,17 @@ func main() {
 	fmt.Println(soalprakerja.MunculSekali("12345"))
 	fmt.Println(soalprakerja.MunculSekali("1122334455"))
 	fmt.Println(soalprakerja.MunculSekali("0872504"))
+
+	//* Sesi 4
+	x, y := soalprakerja.EstimatedDistance(20.5, "Sedan")
+	fmt.Println("Estimated :", x, "meters. Type car :", y)
+	students := soalprakerja.Students{
+		{Name: "Alice", Score: 85},
+		{Name: "Bob", Score: 72},
+		{Name: "Charlie", Score: 93},
+		{Name: "David", Score: 68},
+		{Name: "Eve", Score: 77},
+	}
+
+	students.PrintStatistics()
 }
